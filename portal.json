@@ -1,0 +1,193 @@
+{
+ "project": {
+  "job": "11767 Horrobin Farm, Turton",
+  "client": "Mr A Kirkpatrick",
+  "number": "UKPCS-002",
+  "revision": "P01",
+  "status": "FOR APPROVAL",
+  "date": "14.09.26"
+ },
+ "stages": [
+  {
+   "n": 1,
+   "title": "Slab",
+   "desc": "RC raft slab on blinding and compacted hardcore, with the perimeter insulation (BR11).",
+   "glb": "stage-1.glb"
+  },
+  {
+   "n": 2,
+   "title": "Slab + ICF",
+   "desc": "Nudura 6\" XR35 ICF walls as populated, with the opening end caps and lintels.",
+   "glb": "stage-2.glb"
+  },
+  {
+   "n": 3,
+   "title": "Slab finishes",
+   "desc": "DPM, 2x100 PIR / XPS insulation, 75 screed, threshold infills and ACO drains.",
+   "glb": "stage-3.glb"
+  },
+  {
+   "n": 4,
+   "title": "ICF + steel",
+   "desc": "Structural steel in situ (engineer 26-92-01 C) and the load-bearing masonry walls for context.",
+   "glb": "stage-4.glb"
+  },
+  {
+   "n": 5,
+   "title": "Trusses + roof",
+   "desc": "Curved timber trusses, Comflor roof slabs and the green roof build-up.",
+   "glb": "stage-5.glb"
+  }
+ ],
+ "docs": [
+  {
+   "id": "PACK",
+   "title": "ICF Approval Pack (all drawings, contents, cover)",
+   "number": "UKPCS-002 P01",
+   "group": "Pack",
+   "file": "docs/UKPCS-002 11767 Horrobin Farm - ICF Approval Pack P01.pdf",
+   "thumb": "thumbs/PACK.png",
+   "pages": 13,
+   "note": ""
+  },
+  {
+   "id": "GA-01",
+   "title": "Ground Floor ICF General Arrangement",
+   "number": "UKPCS-002-GA-01",
+   "group": "General arrangement",
+   "file": "docs/UKPCS-002-GA-01 Ground Floor ICF General Arrangement.pdf",
+   "thumb": "thumbs/GA-01.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "EL-01",
+   "title": "North and South Elevations",
+   "number": "UKPCS-002-EL-01",
+   "group": "Elevations",
+   "file": "docs/UKPCS-002-EL-01 North and South Elevations.pdf",
+   "thumb": "thumbs/EL-01.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "EL-02",
+   "title": "East and West Elevations",
+   "number": "UKPCS-002-EL-02",
+   "group": "Elevations",
+   "file": "docs/UKPCS-002-EL-02 East and West Elevations.pdf",
+   "thumb": "thumbs/EL-02.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "SE-01",
+   "title": "Section A-A",
+   "number": "UKPCS-002-SE-01",
+   "group": "Sections",
+   "file": "docs/UKPCS-002-SE-01 Section A-A.pdf",
+   "thumb": "thumbs/SE-01.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "SE-02",
+   "title": "Section B-B",
+   "number": "UKPCS-002-SE-02",
+   "group": "Sections",
+   "file": "docs/UKPCS-002-SE-02 Section B-B.pdf",
+   "thumb": "thumbs/SE-02.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "SE-03",
+   "title": "Section C-C",
+   "number": "UKPCS-002-SE-03",
+   "group": "Sections",
+   "file": "docs/UKPCS-002-SE-03 Section C-C.pdf",
+   "thumb": "thumbs/SE-03.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "SE-04",
+   "title": "Section D-D",
+   "number": "UKPCS-002-SE-04",
+   "group": "Sections",
+   "file": "docs/UKPCS-002-SE-04 Section D-D.pdf",
+   "thumb": "thumbs/SE-04.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "SE-05",
+   "title": "Section E-E",
+   "number": "UKPCS-002-SE-05",
+   "group": "Sections",
+   "file": "docs/UKPCS-002-SE-05 Section E-E.pdf",
+   "thumb": "thumbs/SE-05.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "DT-01",
+   "title": "Threshold Detail - External",
+   "number": "UKPCS-002-DT-01",
+   "group": "Details",
+   "file": "docs/UKPCS-002-DT-01 Threshold Detail - External.pdf",
+   "thumb": "thumbs/DT-01.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "DT-02",
+   "title": "Threshold Detail - Internal",
+   "number": "UKPCS-002-DT-02",
+   "group": "Details",
+   "file": "docs/UKPCS-002-DT-02 Threshold Detail - Internal.pdf",
+   "thumb": "thumbs/DT-02.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "EQ-01",
+   "title": "Questions for the Engineer",
+   "number": "UKPCS-002-EQ-01",
+   "group": "Engineering",
+   "file": "docs/UKPCS-002-EQ-01 Questions for the Engineer.pdf",
+   "thumb": "thumbs/EQ-01.png",
+   "pages": 1,
+   "note": ""
+  },
+  {
+   "id": "ENG",
+   "title": "Carb Zero 26-92-01 rev C Ground Floor Plan Showing Roof Structure Above",
+   "number": "Carb Zero 26-92-01",
+   "group": "Engineering",
+   "file": "docs/26-92 - 01C Grd FL Plan Showing Roof Structure Above.pdf",
+   "thumb": "thumbs/ENG.png",
+   "pages": 1,
+   "note": "Structural engineer's drawing: takes precedence for structure."
+  }
+ ],
+ "questions": [
+  {
+   "id": "EQ-01",
+   "subject": "CW13 marked L-18 (precast block lintel) on an ICF opening",
+   "issue": "CW13 (2875 wide, head +2400) is an opening in the external 150mm-core ICF wall. It is marked L-18, which the lintel schedule gives as a Naylor precast lintel R8 (140x215) / R7 (215x145) for 140/215 blockwork. The matching opening CW14 in the same wall is L-10 (300x150 RC, 2-H12 top / 2-H16 bott.).",
+   "question": "Please confirm the lintel for CW13: is L-18 intended, or should it be an RC lintel cast in the ICF core (e.g. as L-10)?",
+   "status": "Open - awaiting the structural engineer",
+   "response": ""
+  },
+  {
+   "id": "EQ-02",
+   "subject": "D1: steel B-6 as the head of the 5575 opening (confirm interpretation)",
+   "issue": "D1 is the 5575 wide full-length opening in the ICF wall between the conservatory and the room to its east (Wall 21). Your drawing gives it no lintel mark and shows B-6 254x254x73 UC S355 (with 200x100x10 ledger angle one side) along that line. We have modelled B-6 at BOS +2400 / TOS +2654 as the head of the opening, with the structural opening in the ICF up to +2654 and ICF over the steel to the wall top at +3350, giving 2400 clear under the steel.",
+   "question": "Please confirm that B-6 forms the head of D1 as described (clear opening 2400 under B-6, ICF bearing on the steel above), or advise the intended arrangement.",
+   "status": "Open - awaiting the structural engineer",
+   "response": ""
+  }
+ ],
+ "zip": "downloads/UKPCS-002 Horrobin Farm - approval drawings.zip"
+}
