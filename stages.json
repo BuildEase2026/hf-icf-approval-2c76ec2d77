@@ -1,0 +1,71 @@
+{
+ "job": "11767 Horrobin Farm, Turton",
+ "revision": "P01",
+ "stages": [
+  {
+   "n": 1,
+   "title": "Slab",
+   "desc": "RC raft slab on blinding and compacted hardcore, with the perimeter insulation (BR11).",
+   "files": [
+    {
+     "glb": "stage-1.glb",
+     "part": null,
+     "label": null,
+     "bytes": 9772
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Slab + ICF",
+   "desc": "Nudura 6\" XR35 ICF walls as populated, with the opening end caps and lintels.",
+   "files": [
+    {
+     "glb": "stage-2.glb",
+     "part": null,
+     "label": null,
+     "bytes": 2711188
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Slab finishes",
+   "desc": "DPM, 2x100 PIR / XPS insulation, 75 screed, threshold infills and ACO drains.",
+   "files": [
+    {
+     "glb": "stage-3.glb",
+     "part": null,
+     "label": null,
+     "bytes": 2729236
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "title": "ICF + steel",
+   "desc": "Structural steel in situ (engineer 26-92-01 C) and the load-bearing masonry walls for context.",
+   "files": [
+    {
+     "glb": "stage-4.glb",
+     "part": null,
+     "label": null,
+     "bytes": 2756064
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Trusses + roof",
+   "desc": "Curved timber trusses, Comflor roof slabs and the green roof build-up.",
+   "files": [
+    {
+     "glb": "stage-5.glb",
+     "part": null,
+     "label": null,
+     "bytes": 9994564
+    }
+   ]
+  }
+ ]
+}
