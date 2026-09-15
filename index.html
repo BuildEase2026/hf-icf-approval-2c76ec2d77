@@ -487,12 +487,16 @@ function styleGroup(r) {
   });
 }
 
+const loading = new Map();               // glb -> Promise: ONE download per file however fast stages are clicked
 function loadFile(n, f) {
-  if (loaded.has(f.glb)) return Promise.resolve(loaded.get(f.glb));
-  return new Promise((res, rej) => loader.load(f.glb, g => {
-    prepare(g.scene); scene.add(g.scene);
-    const r = { group: g.scene, stage: n, part: f.part || null }; loaded.set(f.glb, r); res(r);
-  }, ev => { if (ev.total) $("load3d").textContent = `Loading stage ${n}… ${Math.round(100 * ev.loaded / ev.total)}%`; }, rej));
+  if (!loading.has(f.glb)) loading.set(f.glb, new Promise((res, rej) => loader.load(f.glb, g => {
+    prepare(g.scene);
+    const r = { group: g.scene, stage: n, part: f.part || null }; loaded.set(f.glb, r);
+    if (view) { r.group.visible = r.stage <= view.n && (!r.part || partOn[r.part] !== false); styleGroup(r); }
+    scene.add(g.scene); res(r);
+  }, ev => { if (ev.total) $("load3d").textContent = `Loading stage ${n}… ${Math.round(100 * ev.loaded / ev.total)}%`; },
+     e => { loading.delete(f.glb); rej(e); })));
+  return loading.get(f.glb);
 }
 
 function applyVisibility() {
@@ -576,6 +580,7 @@ function viewsBar() {
 async function open3d(id, q) {
   showPage("v3d");
   view = viewsById[id] || viewsById[`stage-${P.stages.length}`];
+  const mine = view;
   for (const [k, v] of Object.entries(q || {})) if (k in PART_LABEL) partOn[k] = v !== "0";
   $("v3dtitle").textContent = view.kind === "stage" ? `Stage ${view.n} of ${P.stages.length}: ${view.title}` : view.title;
   $("v3ddesc").textContent = view.desc;
@@ -583,8 +588,8 @@ async function open3d(id, q) {
   $("load3d").hidden = false;
   try {
     for (let k = 1; k <= view.n; k++) for (const f of P.stages[k - 1].files || [{ glb: P.stages[k - 1].glb }]) await loadFile(k, f);
-  } catch (e) { $("load3d").textContent = "Could not load the 3D model. Check the connection and reload."; return; }
-  if (!viewsById[id] && id !== view.id) return;
+  } catch (e) { if (view === mine) $("load3d").textContent = "Could not load the 3D model. Check the connection and reload."; return; }
+  if (view !== mine) return;                // a newer view was chosen while this one loaded
   $("load3d").hidden = true;
   const section = view.kind === "section";
   renderer.clippingPlanes = section ? [cutPlane] : [];
