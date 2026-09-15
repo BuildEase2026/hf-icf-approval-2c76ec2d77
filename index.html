@@ -206,8 +206,8 @@ const viewsById = Object.fromEntries(P.views.map(v => [v.id, v]));
 const mb = b => `${(b / 1e6).toFixed(b < 1e5 ? 2 : 1)} MB`;
 
 // ------------------------------------------------------------------ tabs + router
-const TABS = [["", "Home"], ["3d/stage-" + P.stages.length, "3D model"],
-  ...P.groups.filter(g => g.docs.length || (g.downloads || []).length).map(g => ["docs/" + g.id, g.title])];
+const TABS = [["", "Home"], ["3d/" + (P.default_view || "stage-" + P.stages.length), "3D model"],
+  ...P.groups.filter(g => g.docs.length || (g.downloads || []).length || g.table_html).map(g => ["docs/" + g.id, g.title])];
 $("tabs").innerHTML = TABS.map(([h, t]) => `<a href="#/${h}" data-h="${h}">${esc(t)}</a>`).join("");
 
 function showPage(id) {
@@ -222,7 +222,7 @@ function route() {
   const parts = path.split("/").filter(Boolean);
   const q = Object.fromEntries(new URLSearchParams(query || ""));
   let tab = "";
-  if (parts[0] === "3d") { tab = TABS[1][0]; open3d(parts[1] || `stage-${P.stages.length}`, q); }
+  if (parts[0] === "3d") { tab = TABS[1][0]; open3d(parts[1] || P.default_view || `stage-${P.stages.length}`, q); }
   else if (parts[0] === "docs" && groupsById[parts[1]]) { tab = "docs/" + parts[1]; renderGroup(parts[1]); }
   else if (parts[0] === "doc" && groupsById[parts[1]]) { tab = "docs/" + parts[1]; openDoc(parts[1], parts[2], +(q.page || 1)); }
   else renderHome();
@@ -255,7 +255,7 @@ function groupHead(g, first) {
     ${g.note ? `<p class="note">${esc(g.note)}</p>` : ""}`;
 }
 function modelCard() {
-  const chip = v => `<a class="chip" href="#/3d/${v.id}">${v.kind === "stage" ? `<span class="n">${v.n}</span>` : ""}${esc(v.title)}</a>`;
+  const chip = v => `<a class="chip" href="#/3d/${v.id}">${v.kind === "stage" ? `<span class="n">${v.label || v.n}</span>` : ""}${esc(v.title)}</a>`;
   const by = k => P.views.filter(v => v.kind === k).map(chip).join("");
   return `<div class="model-card">
     <div class="grp">Build sequence</div><div class="chips">${by("stage")}</div>
@@ -269,7 +269,7 @@ function renderHome() {
   let h = `<div class="hero"><div><div class="note" style="margin:0">Nudura ICF · BuildEase Design Suite</div>
     <h1>${esc(proj.job)}</h1></div><div class="facts">${facts.map(([k, v]) => `<span>${k} <b>${esc(v)}</b></span>`).join("")}</div>
     ${all ? `<div class="dl"><a class="big" href="${esc(all.file)}" download>&#8681; Download everything (ZIP, ${all.count} files, ${mb(all.bytes)})</a></div>` : ""}</div>
-    <h2>3D model</h2><p class="note">SketchUp model, stage by stage as it is built. Elevations of the complete ICF structure.</p>${modelCard()}`;
+    <h2>3D model</h2><p class="note">SketchUp model, stage by stage as it is built. Option A (as drawn) and Option B (ICF 100mm in from the slab edge), stage by stage, with elevations.</p>${modelCard()}`;
   for (const g of P.groups) {
     if (!g.docs.length && !(g.downloads || []).length) continue;
     h += `${groupHead(g)}${panelIndex(g)}<div class="grid">${g.docs.map(d => docCard(g, d)).join("")}</div>${downloads(g)}`;
@@ -280,7 +280,7 @@ function renderGroup(id) {
   showPage("group");
   const g = groupsById[id];
   $("groupwrap").innerHTML = `${groupHead(g, true)}${panelIndex(g)}
-    <div class="grid">${g.docs.map(d => docCard(g, d)).join("")}</div>${downloads(g)}`;
+    ${g.table_html || ""}<div class="grid">${g.docs.map(d => docCard(g, d)).join("")}</div>${downloads(g)}`;
   $("group").scrollTop = 0;
 }
 
@@ -492,7 +492,7 @@ function loadFile(n, f) {
   if (!loading.has(f.glb)) loading.set(f.glb, new Promise((res, rej) => loader.load(f.glb, g => {
     prepare(g.scene);
     const r = { group: g.scene, stage: n, part: f.part || null }; loaded.set(f.glb, r);
-    if (view) { r.group.visible = r.stage <= view.n && (!r.part || partOn[r.part] !== false); styleGroup(r); }
+    if (view) { r.group.visible = r.stage === view.n && (!r.part || partOn[r.part] !== false); styleGroup(r); }
     scene.add(g.scene); res(r);
   }, ev => { if (ev.total) $("load3d").textContent = `Loading stage ${n}… ${Math.round(100 * ev.loaded / ev.total)}%`; },
      e => { loading.delete(f.glb); rej(e); })));
@@ -501,14 +501,14 @@ function loadFile(n, f) {
 
 function applyVisibility() {
   for (const r of loaded.values()) {
-    r.group.visible = r.stage <= view.n && (!r.part || partOn[r.part] !== false);
+    r.group.visible = r.stage === view.n && (!r.part || partOn[r.part] !== false);
     styleGroup(r);
   }
 }
 
 function modelBox() {
   const box = new THREE.Box3();
-  for (const r of loaded.values()) if (r.stage <= view.n) box.expandByObject(r.group);
+  for (const r of loaded.values()) if (r.stage === view.n) box.expandByObject(r.group);
   return box;
 }
 
@@ -548,10 +548,10 @@ function tools() {
     b.onclick = onclick; t.appendChild(b); return b;
   };
   const parts = new Set();
-  for (const s of P.stages.slice(0, view.n)) for (const f of s.files || []) if (f.part) parts.add(f.part);
+  for (const s of P.stages.slice(view.n - 1, view.n)) for (const f of s.files || []) if (f.part) parts.add(f.part);
   for (const p of parts) add(`${PART_LABEL[p]}: ${partOn[p] === false ? "OFF" : "ON"}`, partOn[p] !== false,
     () => { partOn[p] = partOn[p] === false; applyVisibility(); tools(); }, "part");
-  if (view.kind === "stage" && view.n > 1) add("Fade earlier stages", fade, () => { fade = !fade; applyVisibility(); tools(); });
+  if (false) add("Fade earlier stages", fade, () => { fade = !fade; applyVisibility(); tools(); });
   add("Edges", edges, () => { edges = !edges; applyVisibility(); tools(); });
   add("Reset view", null, () => frame());
   const drawing = P.groups.flatMap(g => g.docs.map(d => [g, d])).find(([g, d]) => d.view === view.id);
@@ -568,8 +568,8 @@ function viewsBar() {
   kinds.forEach((k, i) => {
     if (i) h += `<span class="sep"></span>`;
     for (const v of P.views.filter(x => x.kind === k)) {
-      const cls = v.id === view.id ? "on" : (k === "stage" && view.kind === "stage" && v.n < view.n ? "done" : "");
-      h += `<button class="${cls}" data-v="${v.id}">${k === "stage" ? v.n + ". " : ""}${esc(v.title)}</button>`;
+      const cls = v.id === view.id ? "on" : (k === "stage" && view.kind === "stage" && v.set === view.set && v.n < view.n ? "done" : "");
+      h += `<button class="${cls}" data-v="${v.id}">${k === "stage" ? (v.label || v.n) + ". " : (v.label ? v.label + " " : "")}${esc(v.title)}</button>`;
     }
   });
   $("views").innerHTML = h;
@@ -579,15 +579,15 @@ function viewsBar() {
 
 async function open3d(id, q) {
   showPage("v3d");
-  view = viewsById[id] || viewsById[`stage-${P.stages.length}`];
+  view = viewsById[id] || viewsById[P.default_view] || viewsById[`stage-${P.stages.length}`];
   const mine = view;
   for (const [k, v] of Object.entries(q || {})) if (k in PART_LABEL) partOn[k] = v !== "0";
-  $("v3dtitle").textContent = view.kind === "stage" ? `Stage ${view.n} of ${P.stages.length}: ${view.title}` : view.title;
+  $("v3dtitle").textContent = view.kind === "stage" ? `${view.set_title}: stage ${view.local} of ${view.count}: ${view.title}` : `${view.set_title}: ${view.title}`;
   $("v3ddesc").textContent = view.desc;
   viewsBar(); tools();
   $("load3d").hidden = false;
   try {
-    for (let k = 1; k <= view.n; k++) for (const f of P.stages[k - 1].files || [{ glb: P.stages[k - 1].glb }]) await loadFile(k, f);
+    for (const f of P.stages[view.n - 1].files || [{ glb: P.stages[view.n - 1].glb }]) await loadFile(view.n, f);
   } catch (e) { if (view === mine) $("load3d").textContent = "Could not load the 3D model. Check the connection and reload."; return; }
   if (view !== mine) return;                // a newer view was chosen while this one loaded
   $("load3d").hidden = true;
@@ -606,7 +606,7 @@ async function open3d(id, q) {
     $("cutpos").value = Math.round(10000 * (base - cutRange[0]) / (cutRange[1] - cutRange[0]));
     setCut((base - cutRange[0]) / (cutRange[1] - cutRange[0]));
   }
-  const key = view.kind === "stage" ? "stage" : view.id;
+  const key = view.kind === "stage" ? "stage-" + view.set : view.id;
   if (framedFor !== key) { resize3d(); frame(); framedFor = key; }
 }
 $("cutpos").oninput = e => setCut(+e.target.value / 10000);

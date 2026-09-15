@@ -5,14 +5,20 @@
   "job": "11767 Horrobin Farm, Turton",
   "number_prefix": "UKPCS-002",
   "status": "FOR APPROVAL",
-  "revision": "P01",
-  "model_title": "UKPCS-001 Horrobin Farm Approval Issue Model"
+  "revision": "P02",
+  "model_title": "UKPCS-001 Horrobin Farm - design options A and B"
  },
+ "default_view": "stage-5",
  "views": [
   {
    "id": "stage-1",
    "kind": "stage",
    "n": 1,
+   "local": 1,
+   "count": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A1",
    "title": "Slab",
    "desc": "RC raft slab on blinding and compacted hardcore, with the perimeter insulation (BR11)."
   },
@@ -20,6 +26,11 @@
    "id": "stage-2",
    "kind": "stage",
    "n": 2,
+   "local": 2,
+   "count": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A2",
    "title": "Slab + ICF",
    "desc": "Nudura 6\" XR35 ICF walls as populated, with the opening end caps and lintels."
   },
@@ -27,6 +38,11 @@
    "id": "stage-3",
    "kind": "stage",
    "n": 3,
+   "local": 3,
+   "count": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A3",
    "title": "Slab finishes",
    "desc": "DPM, 2x100 PIR / XPS insulation, 75 screed, threshold infills and ACO drains."
   },
@@ -34,6 +50,11 @@
    "id": "stage-4",
    "kind": "stage",
    "n": 4,
+   "local": 4,
+   "count": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A4",
    "title": "ICF + steel",
    "desc": "Structural steel in situ (engineer 26-92-01 C) and the load-bearing masonry walls for context."
   },
@@ -41,6 +62,11 @@
    "id": "stage-5",
    "kind": "stage",
    "n": 5,
+   "local": 5,
+   "count": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A5",
    "title": "Trusses + roof",
    "desc": "Curved timber trusses, Comflor roof slabs and the green roof build-up."
   },
@@ -48,8 +74,11 @@
    "id": "elev-N",
    "kind": "elevation",
    "n": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A",
    "title": "North elevation",
-   "desc": "Complete ICF structure seen from the north.",
+   "desc": "Complete ICF structure seen from the north (Option A).",
    "dir": [
     0.0,
     0.12,
@@ -60,8 +89,11 @@
    "id": "elev-S",
    "kind": "elevation",
    "n": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A",
    "title": "South elevation",
-   "desc": "Complete ICF structure seen from the south.",
+   "desc": "Complete ICF structure seen from the south (Option A).",
    "dir": [
     0.0,
     0.12,
@@ -72,8 +104,11 @@
    "id": "elev-E",
    "kind": "elevation",
    "n": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A",
    "title": "East elevation",
-   "desc": "Complete ICF structure seen from the east.",
+   "desc": "Complete ICF structure seen from the east (Option A).",
    "dir": [
     1.0,
     0.12,
@@ -84,8 +119,131 @@
    "id": "elev-W",
    "kind": "elevation",
    "n": 5,
+   "set": "A",
+   "set_title": "Option A",
+   "label": "A",
    "title": "West elevation",
-   "desc": "Complete ICF structure seen from the west.",
+   "desc": "Complete ICF structure seen from the west (Option A).",
+   "dir": [
+    -1.0,
+    0.12,
+    0.0
+   ]
+  },
+  {
+   "id": "b-stage-1",
+   "kind": "stage",
+   "n": 6,
+   "local": 1,
+   "count": 5,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B1",
+   "title": "Slab",
+   "desc": "RC raft slab on blinding and compacted hardcore, with the perimeter insulation (BR11)."
+  },
+  {
+   "id": "b-stage-2",
+   "kind": "stage",
+   "n": 7,
+   "local": 2,
+   "count": 5,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B2",
+   "title": "Slab + ICF",
+   "desc": "Nudura 6\" XR35 ICF walls as populated, with the opening end caps and lintels."
+  },
+  {
+   "id": "b-stage-3",
+   "kind": "stage",
+   "n": 8,
+   "local": 3,
+   "count": 5,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B3",
+   "title": "Slab finishes",
+   "desc": "DPM, 2x100 PIR / XPS insulation, 75 screed, threshold infills and ACO drains."
+  },
+  {
+   "id": "b-stage-4",
+   "kind": "stage",
+   "n": 9,
+   "local": 4,
+   "count": 5,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B4",
+   "title": "ICF + steel",
+   "desc": "Structural steel in situ (engineer 26-92-01 C) and the load-bearing masonry walls for context."
+  },
+  {
+   "id": "b-stage-5",
+   "kind": "stage",
+   "n": 10,
+   "local": 5,
+   "count": 5,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B5",
+   "title": "Trusses + roof",
+   "desc": "Curved timber trusses, Comflor roof slabs and the green roof build-up."
+  },
+  {
+   "id": "b-elev-N",
+   "kind": "elevation",
+   "n": 10,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B",
+   "title": "North elevation",
+   "desc": "Complete ICF structure seen from the north (Option B).",
+   "dir": [
+    0.0,
+    0.12,
+    -1.0
+   ]
+  },
+  {
+   "id": "b-elev-S",
+   "kind": "elevation",
+   "n": 10,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B",
+   "title": "South elevation",
+   "desc": "Complete ICF structure seen from the south (Option B).",
+   "dir": [
+    0.0,
+    0.12,
+    1.0
+   ]
+  },
+  {
+   "id": "b-elev-E",
+   "kind": "elevation",
+   "n": 10,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B",
+   "title": "East elevation",
+   "desc": "Complete ICF structure seen from the east (Option B).",
+   "dir": [
+    1.0,
+    0.12,
+    0.0
+   ]
+  },
+  {
+   "id": "b-elev-W",
+   "kind": "elevation",
+   "n": 10,
+   "set": "B",
+   "set_title": "Option B: ICF 100mm in from slab edge",
+   "label": "B",
+   "title": "West elevation",
+   "desc": "Complete ICF structure seen from the west (Option B).",
    "dir": [
     -1.0,
     0.12,
@@ -93,16 +251,10 @@
    ]
   }
  ],
- "download_all": {
-  "file": "downloads/UKPCS-002 Horrobin Farm - Approval Issue P01.zip",
-  "bytes": 5602044,
-  "count": 13,
-  "title": "Download everything"
- },
  "stages": [
   {
    "n": 1,
-   "title": "Slab",
+   "title": "Option A Slab",
    "desc": "RC raft slab on blinding and compacted hardcore, with the perimeter insulation (BR11).",
    "files": [
     {
@@ -115,7 +267,7 @@
   },
   {
    "n": 2,
-   "title": "Slab + ICF",
+   "title": "Option A Slab + ICF",
    "desc": "Nudura 6\" XR35 ICF walls as populated, with the opening end caps and lintels.",
    "files": [
     {
@@ -128,7 +280,7 @@
   },
   {
    "n": 3,
-   "title": "Slab finishes",
+   "title": "Option A Slab finishes",
    "desc": "DPM, 2x100 PIR / XPS insulation, 75 screed, threshold infills and ACO drains.",
    "files": [
     {
@@ -141,7 +293,7 @@
   },
   {
    "n": 4,
-   "title": "ICF + steel",
+   "title": "Option A ICF + steel",
    "desc": "Structural steel in situ (engineer 26-92-01 C) and the load-bearing masonry walls for context.",
    "files": [
     {
@@ -154,7 +306,7 @@
   },
   {
    "n": 5,
-   "title": "Trusses + roof",
+   "title": "Option A Trusses + roof",
    "desc": "Curved timber trusses, Comflor roof slabs and the green roof build-up.",
    "files": [
     {
@@ -164,26 +316,100 @@
      "bytes": 9994564
     }
    ]
+  },
+  {
+   "n": 6,
+   "title": "Option B Slab",
+   "desc": "RC raft slab on blinding and compacted hardcore, with the perimeter insulation (BR11).",
+   "files": [
+    {
+     "glb": "b-stage-1.glb",
+     "part": null,
+     "label": null,
+     "bytes": 9772
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Option B Slab + ICF",
+   "desc": "Nudura 6\" XR35 ICF walls as populated, with the opening end caps and lintels.",
+   "files": [
+    {
+     "glb": "b-stage-2.glb",
+     "part": null,
+     "label": null,
+     "bytes": 2695212
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Option B Slab finishes",
+   "desc": "DPM, 2x100 PIR / XPS insulation, 75 screed, threshold infills and ACO drains.",
+   "files": [
+    {
+     "glb": "b-stage-3.glb",
+     "part": null,
+     "label": null,
+     "bytes": 2713292
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Option B ICF + steel",
+   "desc": "Structural steel in situ (engineer 26-92-01 C) and the load-bearing masonry walls for context.",
+   "files": [
+    {
+     "glb": "b-stage-4.glb",
+     "part": null,
+     "label": null,
+     "bytes": 2740124
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "title": "Option B Trusses + roof",
+   "desc": "Curved timber trusses, Comflor roof slabs and the green roof build-up.",
+   "files": [
+    {
+     "glb": "b-stage-5.glb",
+     "part": null,
+     "label": null,
+     "bytes": 9977788
+    }
+   ]
   }
  ],
  "groups": [
   {
-   "id": "drawings",
-   "title": "Approval drawings",
-   "note": "A3 approval issue: for comment and approval, not for construction.",
+   "id": "option-a",
+   "title": "Option A: as drawn",
+   "note": "Approval drawings as currently designed. A3 approval issue: for comment and approval, not for construction.",
    "zip": {
-    "file": "downloads/UKPCS-002 Approval drawings.zip",
-    "bytes": 785702,
-    "count": 10
+    "file": "downloads/UKPCS-002 Horrobin Farm - Option A.zip",
+    "bytes": 4463192,
+    "count": 12
    },
    "docs": [
     {
+     "id": "UKPCS-002-PACK",
+     "title": "ICF Approval Pack (cover, contents, all sheets)",
+     "file": "docs/option-a/UKPCS-002 11767 Horrobin Farm - ICF Approval Pack P02.pdf",
+     "pages": 13,
+     "thumb": "thumbs/UKPCS-002-PACK.png",
+     "bytes": 4458089,
+     "number": "UKPCS-002 P02"
+    },
+    {
      "id": "UKPCS-002-GA-01",
      "title": "Ground Floor ICF General Arrangement",
-     "file": "docs/drawings/UKPCS-002-GA-01 Ground Floor ICF General Arrangement.pdf",
+     "file": "docs/option-a/UKPCS-002-GA-01 Ground Floor ICF General Arrangement.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-GA-01.png",
-     "bytes": 86873,
+     "bytes": 86296,
      "number": "UKPCS-002-GA-01",
      "view": "stage-2",
      "view_opts": {}
@@ -191,10 +417,10 @@
     {
      "id": "UKPCS-002-EL-01",
      "title": "North and South Elevations",
-     "file": "docs/drawings/UKPCS-002-EL-01 North and South Elevations.pdf",
+     "file": "docs/option-a/UKPCS-002-EL-01 North and South Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-EL-01.png",
-     "bytes": 138627,
+     "bytes": 138715,
      "number": "UKPCS-002-EL-01",
      "view": "elev-N",
      "view_opts": {}
@@ -202,7 +428,7 @@
     {
      "id": "UKPCS-002-EL-02",
      "title": "East and West Elevations",
-     "file": "docs/drawings/UKPCS-002-EL-02 East and West Elevations.pdf",
+     "file": "docs/option-a/UKPCS-002-EL-02 East and West Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-EL-02.png",
      "bytes": 160671,
@@ -213,7 +439,7 @@
     {
      "id": "UKPCS-002-SE-01",
      "title": "Section A-A",
-     "file": "docs/drawings/UKPCS-002-SE-01 Section A-A.pdf",
+     "file": "docs/option-a/UKPCS-002-SE-01 Section A-A.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-SE-01.png",
      "bytes": 100596,
@@ -224,7 +450,7 @@
     {
      "id": "UKPCS-002-SE-02",
      "title": "Section B-B",
-     "file": "docs/drawings/UKPCS-002-SE-02 Section B-B.pdf",
+     "file": "docs/option-a/UKPCS-002-SE-02 Section B-B.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-SE-02.png",
      "bytes": 81956,
@@ -235,7 +461,7 @@
     {
      "id": "UKPCS-002-SE-03",
      "title": "Section C-C",
-     "file": "docs/drawings/UKPCS-002-SE-03 Section C-C.pdf",
+     "file": "docs/option-a/UKPCS-002-SE-03 Section C-C.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-SE-03.png",
      "bytes": 101349,
@@ -246,7 +472,7 @@
     {
      "id": "UKPCS-002-SE-04",
      "title": "Section D-D",
-     "file": "docs/drawings/UKPCS-002-SE-04 Section D-D.pdf",
+     "file": "docs/option-a/UKPCS-002-SE-04 Section D-D.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-SE-04.png",
      "bytes": 96029,
@@ -257,7 +483,7 @@
     {
      "id": "UKPCS-002-SE-05",
      "title": "Section E-E",
-     "file": "docs/drawings/UKPCS-002-SE-05 Section E-E.pdf",
+     "file": "docs/option-a/UKPCS-002-SE-05 Section E-E.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-SE-05.png",
      "bytes": 92046,
@@ -268,10 +494,10 @@
     {
      "id": "UKPCS-002-DT-01",
      "title": "Threshold Detail - External",
-     "file": "docs/drawings/UKPCS-002-DT-01 Threshold Detail - External.pdf",
+     "file": "docs/option-a/UKPCS-002-DT-01 Threshold Detail - External.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-DT-01.png",
-     "bytes": 60130,
+     "bytes": 60215,
      "number": "UKPCS-002-DT-01",
      "view": "stage-3",
      "view_opts": {}
@@ -279,44 +505,21 @@
     {
      "id": "UKPCS-002-DT-02",
      "title": "Threshold Detail - Internal",
-     "file": "docs/drawings/UKPCS-002-DT-02 Threshold Detail - Internal.pdf",
+     "file": "docs/option-a/UKPCS-002-DT-02 Threshold Detail - Internal.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-DT-02.png",
      "bytes": 59829,
      "number": "UKPCS-002-DT-02",
      "view": "stage-3",
      "view_opts": {}
-    }
-   ]
-  },
-  {
-   "id": "engineering",
-   "title": "Engineering",
-   "note": "Structural engineer's drawing (takes precedence for structure) and the questions raised with the engineer.",
-   "zip": {
-    "file": "downloads/UKPCS-002 Engineering.zip",
-    "bytes": 1172201,
-    "count": 2
-   },
-   "docs": [
-    {
-     "id": "ENG-26-92-01",
-     "title": "Carb Zero 26-92-01 rev C Ground Floor Plan Showing Roof Structure Above",
-     "file": "docs/engineering/26-92 - 01C Grd FL Plan Showing Roof Structure Above.pdf",
-     "pages": 1,
-     "thumb": "thumbs/ENG-26-92-01.png",
-     "bytes": 1038883,
-     "number": "Carb Zero 26-92-01",
-     "view": "stage-4",
-     "view_opts": {}
     },
     {
      "id": "UKPCS-002-EQ-01",
-     "title": "Questions for the Engineer (open: EQ-01, EQ-02)",
-     "file": "docs/engineering/UKPCS-002-EQ-01 Questions for the Engineer.pdf",
+     "title": "Questions for the Engineer (open: EQ-02)",
+     "file": "docs/option-a/UKPCS-002-EQ-01 Questions for the Engineer.pdf",
      "pages": 1,
      "thumb": "thumbs/UKPCS-002-EQ-01.png",
-     "bytes": 357538,
+     "bytes": 198803,
      "number": "UKPCS-002-EQ-01",
      "view": "stage-4",
      "view_opts": {}
@@ -324,25 +527,182 @@
    ]
   },
   {
-   "id": "issue",
-   "title": "Full approval pack",
-   "note": "Cover, clickable contents and every sheet in one PDF.",
+   "id": "option-b",
+   "title": "Option B: ICF 100mm in from slab edge",
+   "note": "Option B: ICF 100mm in from slab edge. Same sheet numbers with the suffix B. A3 approval issue: for comment and approval, not for construction.",
    "zip": {
-    "file": "downloads/UKPCS-002 Approval pack.zip",
-    "bytes": 3644185,
+    "file": "downloads/UKPCS-002 Horrobin Farm - Option B.zip",
+    "bytes": 4863236,
+    "count": 12
+   },
+   "docs": [
+    {
+     "id": "UKPCS-002-PACKB",
+     "title": "ICF Approval Pack - Option B: ICF 100mm in from slab edge (cover, contents, all sheets)",
+     "file": "docs/option-b/UKPCS-002 11767 Horrobin Farm - ICF Approval Pack P01 Option B.pdf",
+     "pages": 13,
+     "thumb": "thumbs/UKPCS-002-PACKB.png",
+     "bytes": 4727728,
+     "number": "UKPCS-002 P01 Option B"
+    },
+    {
+     "id": "UKPCS-002-GA-01B",
+     "title": "Ground Floor ICF General Arrangement",
+     "file": "docs/option-b/UKPCS-002-GA-01B Ground Floor ICF General Arrangement.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-GA-01B.png",
+     "bytes": 87069,
+     "number": "UKPCS-002-GA-01B",
+     "view": "b-stage-2",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-EL-01B",
+     "title": "North and South Elevations",
+     "file": "docs/option-b/UKPCS-002-EL-01B North and South Elevations.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-EL-01B.png",
+     "bytes": 141910,
+     "number": "UKPCS-002-EL-01B",
+     "view": "b-elev-N",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-EL-02B",
+     "title": "East and West Elevations",
+     "file": "docs/option-b/UKPCS-002-EL-02B East and West Elevations.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-EL-02B.png",
+     "bytes": 162545,
+     "number": "UKPCS-002-EL-02B",
+     "view": "b-elev-E",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-SE-01B",
+     "title": "Section A-A",
+     "file": "docs/option-b/UKPCS-002-SE-01B Section A-A.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-SE-01B.png",
+     "bytes": 100618,
+     "number": "UKPCS-002-SE-01B",
+     "view": "b-stage-5",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-SE-02B",
+     "title": "Section B-B",
+     "file": "docs/option-b/UKPCS-002-SE-02B Section B-B.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-SE-02B.png",
+     "bytes": 82024,
+     "number": "UKPCS-002-SE-02B",
+     "view": "b-stage-5",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-SE-03B",
+     "title": "Section C-C",
+     "file": "docs/option-b/UKPCS-002-SE-03B Section C-C.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-SE-03B.png",
+     "bytes": 101605,
+     "number": "UKPCS-002-SE-03B",
+     "view": "b-stage-5",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-SE-04B",
+     "title": "Section D-D",
+     "file": "docs/option-b/UKPCS-002-SE-04B Section D-D.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-SE-04B.png",
+     "bytes": 96349,
+     "number": "UKPCS-002-SE-04B",
+     "view": "b-stage-5",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-SE-05B",
+     "title": "Section E-E",
+     "file": "docs/option-b/UKPCS-002-SE-05B Section E-E.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-SE-05B.png",
+     "bytes": 92091,
+     "number": "UKPCS-002-SE-05B",
+     "view": "b-stage-5",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-DT-01B",
+     "title": "Threshold Detail - External",
+     "file": "docs/option-b/UKPCS-002-DT-01B Threshold Detail - External.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-DT-01B.png",
+     "bytes": 60353,
+     "number": "UKPCS-002-DT-01B",
+     "view": "b-stage-3",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-DT-02B",
+     "title": "Threshold Detail - Internal",
+     "file": "docs/option-b/UKPCS-002-DT-02B Threshold Detail - Internal.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-DT-02B.png",
+     "bytes": 59887,
+     "number": "UKPCS-002-DT-02B",
+     "view": "b-stage-3",
+     "view_opts": {}
+    },
+    {
+     "id": "UKPCS-002-EQ-01B",
+     "title": "Questions for the Engineer (open: EQ-02, EQ-03)",
+     "file": "docs/option-b/UKPCS-002-EQ-01B Questions for the Engineer.pdf",
+     "pages": 1,
+     "thumb": "thumbs/UKPCS-002-EQ-01B.png",
+     "bytes": 421927,
+     "number": "UKPCS-002-EQ-01B",
+     "view": "b-stage-4",
+     "view_opts": {}
+    }
+   ]
+  },
+  {
+   "id": "engineering",
+   "title": "Engineering",
+   "note": "Structural engineer's drawing (takes precedence for structure). Each option's questions for the engineer are in its own tab.",
+   "zip": {
+    "file": "downloads/UKPCS-002 Engineering.zip",
+    "bytes": 895034,
     "count": 1
    },
    "docs": [
     {
-     "id": "UKPCS-002-PACK",
-     "title": "ICF Approval Pack (cover, contents, all sheets)",
-     "file": "docs/issue/UKPCS-002 11767 Horrobin Farm - ICF Approval Pack P01.pdf",
-     "pages": 13,
-     "thumb": "thumbs/UKPCS-002-PACK.png",
-     "bytes": 4616844,
-     "number": "UKPCS-002 P01"
+     "id": "ENG-26-92-01",
+     "title": "Carb Zero 26-92-01 rev C Ground Floor Plan Showing Roof Structure Above",
+     "file": "docs/eng/26-92 - 01C Grd FL Plan Showing Roof Structure Above.pdf",
+     "pages": 1,
+     "thumb": "thumbs/ENG-26-92-01.png",
+     "bytes": 1038883,
+     "number": "Carb Zero 26-92-01",
+     "view": "stage-4",
+     "view_opts": {}
     }
    ]
+  },
+  {
+   "id": "revisions",
+   "title": "Revisions actioned",
+   "note": "What has been revised since the first approval issue, and on which sheets (click a sheet to open it). Unchanged sheets keep their previous revision.",
+   "docs": [],
+   "table_html": "<style>.revtab{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}.revtab th,.revtab td{border-bottom:1px solid #d8dde3;padding:8px 10px;text-align:left;vertical-align:top}.revtab th{background:#eef6f4;color:#0b5e52}.revtab .sheets a{display:inline-block;margin:0 8px 4px 0;white-space:nowrap}</style><table class=\"revtab\"><thead><tr><th>Option</th><th>Rev</th><th>Date</th><th>Change</th><th>Sheets revised</th></tr></thead><tbody><tr><td>Option A: as drawn</td><td><b>P02</b></td><td>15.09.26</td><td>CW13 lintel revised from L-18 (Naylor precast) to L-10 (300x150 RC, 2-H12 top / 2-H16 bott.) per the engineer&#x27;s response; EQ-01 closed.</td><td class=\"sheets\"><a href=\"#/doc/option-a/UKPCS-002-GA-01\">UKPCS-002-GA-01</a> <a href=\"#/doc/option-a/UKPCS-002-EL-01\">UKPCS-002-EL-01</a> <a href=\"#/doc/option-a/UKPCS-002-DT-01\">UKPCS-002-DT-01</a> <a href=\"#/doc/option-a/UKPCS-002-EQ-01\">UKPCS-002-EQ-01</a></td></tr><tr><td>Option B: ICF 100mm in from slab edge</td><td><b>P01</b></td><td>15.09.26</td><td>First issue of Option B: all external ICF walls moved 100mm in from the RC raft edge (screens D1 / CW05 / CWO1 +200, VOID W4 / W7 -200, steels adjusted, EQ-03 raised). Includes the CW13 L-10 revision (EQ-01 closed).</td><td class=\"sheets\"><a href=\"#/doc/option-b/UKPCS-002-GA-01B\">UKPCS-002-GA-01B</a> <a href=\"#/doc/option-b/UKPCS-002-EL-01B\">UKPCS-002-EL-01B</a> <a href=\"#/doc/option-b/UKPCS-002-EL-02B\">UKPCS-002-EL-02B</a> <a href=\"#/doc/option-b/UKPCS-002-SE-01B\">UKPCS-002-SE-01B</a> <a href=\"#/doc/option-b/UKPCS-002-SE-02B\">UKPCS-002-SE-02B</a> <a href=\"#/doc/option-b/UKPCS-002-SE-03B\">UKPCS-002-SE-03B</a> <a href=\"#/doc/option-b/UKPCS-002-SE-04B\">UKPCS-002-SE-04B</a> <a href=\"#/doc/option-b/UKPCS-002-SE-05B\">UKPCS-002-SE-05B</a> <a href=\"#/doc/option-b/UKPCS-002-DT-01B\">UKPCS-002-DT-01B</a> <a href=\"#/doc/option-b/UKPCS-002-DT-02B\">UKPCS-002-DT-02B</a> <a href=\"#/doc/option-b/UKPCS-002-EQ-01B\">UKPCS-002-EQ-01B</a></td></tr></tbody></table>"
   }
- ]
+ ],
+ "download_all": {
+  "file": "downloads/UKPCS-002 Horrobin Farm - Approval Issue P02 (Options A and B).zip",
+  "bytes": 10221418,
+  "count": 25,
+  "title": "Download everything"
+ }
 }
